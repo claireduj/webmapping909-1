@@ -1,0 +1,170 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0F2919;
+}
+.grid-container {
+    position: relative;
+    height: 100%;
+}
+a {
+    color: #046900; 
+}
+
+/* Couleur des liens au survol */
+a:hover {
+    color: #00be20;
+}
+
+
+#titre {
+    position: relative;
+    height: 10%;
+    top: 0vh;
+    left: 0vh;
+    right:0vh;
+    z-index: 1000;
+    background-image: linear-gradient(to right, #052d00e1, rgba(0,0,0,0)), url('tree2.jpg');    
+    background-size: cover; /* Redimensionner l'image pour couvrir tout le div */
+    background-position: right; /* Positionner l'image à droite */
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+}
+
+#texte-titre {
+    margin-left : 19px;
+    font-family: 'Protest Strike', sans-serif;
+    font-weight: 500;
+    color: #F4A261;
+    font-size: 4vh;
+    position: absolute;
+    bottom: 15px;
+}
+
+#mentions {
+    display: flex;            /* Active Flexbox pour le conteneur */
+    align-items: center;      /* Centre verticalement le contenu */
+    justify-content: flex-end;/* Alignement du contenu à droite (comme votre text-align: right) */
+    height: 3%;
+    font-size: 10px;
+    font-family: 'Quicksand', sans-serif;
+    color: #F4A261;
+}
+
+#mentions a {
+    display: flex;            /* Active Flexbox pour le conteneur */
+    align-items: center;      /* Centre verticalement le contenu */
+    height: 3%;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Quicksand', sans-serif;   
+    color: #ffe4cf;
+}
+
+
+#info-button {
+    position: absolute;
+    top: 11vh;
+    left: 2vh;
+    z-index: 10000;
+    background-color: #052d00ee;
+    border-radius: 10px;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 5px 10px;
+}
+
+#info-button i {
+    color: #F4A261; /* Couleur jaune pour l'icône */
+}
+
+#info-button:hover {
+    background-color: rgb(67, 184, 67);
+    color: black;
+  }
+
+  #info-button:hover i {
+    color: #000000; /* Couleur jaune pour l'icône */
+}
+
+.info-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffffe7;
+    border-color: #003f0ac5;
+    border-style: solid;
+    border-width: 1px;
+    top: 12vh;
+    left: 3vh;
+    width: 45vh;
+    padding-top: 2vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    padding-bottom: 3vh;
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#box-legend {
+    position: absolute;
+    bottom: 6vh;
+    right: 1vh;
+    width: 230px;
+    background-color: rgba(255, 255, 255, 0.877);
+    border: 1px solid #fcfcfc33;
+    padding: 10px;
+    z-index: 1000;
+    border-radius: 5px; /* arrondir les coins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
+    border-color: #000000;
+}
+
+#box-legend h3 {
+    margin: 5px 10px; /* Réduit l'espace autour du titre */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: #2b2b2b; 
+    font-size: smaller;   
+}
+
+#no-layers {
+    margin: 5px 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+
+#map {
+    height: 87%; 
+    width: 100%;
+    z-index: 1;
+}
+
+#color-display{
+        position: absolute;
+        bottom: 50vh;
+        right: 1vh;
+        width: 230px;
+        background-color: rgba(255, 255, 255, 0.877);
+        border: 1px solid #fcfcfc00;
+        padding: 10px;
+        z-index: 1000;
+        border-radius: 10px; /* arrondir les coins */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
+    }
+
+
+/* popup */    
+.customPop .leaflet-popup-content-wrapper {
+    background-color: #D7F3E5; 
+}
+
+.popup-content {
+    font-family: 'Quicksand', sans-serif;
+}

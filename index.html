@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- LIBRAIRIES & STYLE-->
+
+    <!-- Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Feuille de style-->
+    <link rel="stylesheet" href="carto copy.css">
+
+    <!-- Axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!--  Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+
+    <!--jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- font-awesome -->
+    <script src="https://kit.fontawesome.com/2cb9c2c23b.js" crossorigin="anonymous"></script>
+
+    <!-- plugin layer opacity -->
+    <script src="L.Control.Opacity.js"></script>
+    <link href="L.Control.Opacity.css" rel="stylesheet" />
+    
+    <link rel="icon" href="icons8-feuille-16.png" />
+
+    <title>WEBMAPPING</title>
+
+</head>
+
+<body>
+
+  
+
+    <div class="grid-container"> 
+
+        <div id="titre">
+            <div id = "texte-titre">Télédétection des essences d'arbres</div>
+        </div> 
+
+        <!-- Bouton "Infos" -->
+        <button id="info-button" class="info-button">
+            <i class="fa-solid fa-circle-info"></i> A propos
+        </button>
+
+        
+        <!-- Section à propos-->
+        <div id="info-content" class="info-content">
+            <p>Cette cartographie présente les résultats d'une classification réalisée avec <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target=”_blank” ><i>Random Forest Classifier</i></a> (Scikit Learn).</p>
+            <p>L'algorithme a été entraîné avec la <a href="https://geoservices.ign.fr/bdforet" target=”_blank”>BD Forêt®</a> (IGN) pour lui apprendre à détecter les essences dominantes des peuplements forestiers à partir d'images <a href="https://www.theia-land.fr/product/reflectance-de-surface-sentinel-2/" target="_blank">Sentinel-2.</a></p>
+            <p>NB : s'agissant d'une démo, seule une partie des données sont disponibles.</p>
+            <p><b>Visualiser les données :</b></p>
+            <ul>
+            <li>Les échantillons (affichés par défaut) sont les polygones ayant servi à entraîner le modèle.</li> 
+            <li>Le résultat de la classification est le raster obtenu grâce à l'application du modèle sur l'ensemble des peuplements forestiers.</li>
+            </ul>
+            <i class="fa-regular fa-circle-question"></i>
+            <a href="https://mlang.frama.io/cours-marc-lang/stable/sigmaM2_telea/sigmaM2_projet.html" target="_blank"> Plus d'informations sur le projet</a>
+        </div>
+
+        <!-- Carte-->
+        <div id="map"></div>
+
+        <!-- Légende-->        
+        <div id="box-legend">
+            <h3>Légende</h3>
+            <div id = "no-layers">Pas de couche activée</div>
+            <div id="legend"></div>
+        </div>
+
+        <div id="mentions">
+            Réalisation : &nbsp;<a href="mailto:dujardin.claire7@gmail.com">Claire Dujardin </a>&nbsp;(SIGMA) - 
+            Image par&nbsp; <a href="https://pixabay.com/fr/users/yoshitaka2-24545143/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8336189"> yoshitaka2</a> &nbsp;de &nbsp;<a href="https://pixabay.com/fr//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8336189">Pixabay</a>
+            &nbsp; - Favicon de &nbsp; <a target="_blank" href="https://icons8.com">Icons8</a>&nbsp;&nbsp;
+        </div>
+    
+    </div>
+
+</body>
+
+</html>
+
+<!-- script JS -->
+<script src="main copy.js"></script>
