@@ -107,9 +107,10 @@ var style_select = {
 };
 
 
-/// Adresse du flux WFS en json
+// // /// Adresse du flux WFS en json
 var wfs_geoserver= 'https://www.geotests.net/geoserver/cdujardin/ows?'
 var wfsURL = wfs_geoserver + "service=WFS&version=1.0.0&request=GetFeature&typeName=cdujardin%3Acd_samples_foret84&maxFeatures=1400&outputFormat=application%2Fjson";
+
 
 var selectedPolygon = null; // polygone cliqué
 
@@ -119,7 +120,7 @@ async function getWFSgeojson() {
         const response = await fetch(wfsURL);
         const data = await response.json();
 
-        /// Style catégorisé
+        // /// Style catégorisé
         function style_json(feature) {
             // Définir un style par défaut
             var defaultStyle = {
@@ -295,16 +296,39 @@ var overlayMaps = {
     "Résultat de la classification": raster_classif
 
 }
-
 var layer_raster_classif = {"Résultat de la classification": raster_classif}
-//OpacityControl
+
+// CHOIX DES COUCHES
+var layerControl = L.control.layers(baseMaps, overlayMaps,{position: 'topright'}).addTo(map);
+
+// Créer une couche Leaflet pour la couche raster_classif
+var rasterLayer = L.layerGroup([raster_classif]);
+
+
+// REGLAGE DE L'OPACITE (ne s'active que quand l'utilisateur rend visible la couche raster classf)
 var opacityControl = L.control
     .opacity(layer_raster_classif, {
         label: 'Transparence',
     })
-    .addTo(map);
 
-var layerControl = L.control.layers(baseMaps, overlayMaps,{position: 'topright'}).addTo(map);
+// Ajouter à la couche par défaut mais en masqué
+opacityControl.addTo(map);
+opacityControl.getContainer().style.display = 'none';
+
+map.on('overlayadd overlayremove', function(eventLayer) {
+    if (eventLayer.layer === raster_classif) {
+        // Vérifier si la couche raster_classif est activée
+        if (map.hasLayer(raster_classif)) {
+            // Afficher le contrôle d'opacité
+            opacityControl.getContainer().style.display = 'block';
+        } else {
+            // Masquer le contrôle d'opacité si la couche raster_classif est désactivée
+            opacityControl.getContainer().style.display = 'none';
+        }
+    }
+});
+
+
 
 /// ACTION AU CLIC : récupérer la valeur du pixel et l'afficher dans un popup
 
