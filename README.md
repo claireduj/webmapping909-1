@@ -23,7 +23,7 @@ La carte est créée avec la bibliothèque Leaflet intégrée dans une page HTML
 
 -  Barre d’échelle, contrôle du niveau de zoom et des couches : paramètres de Leaflet
 
-- Contrôle de la transparence du raster classifié : plugin <https://github.com/dayjournal/Leaflet.Control.Opacity>Leaflet Control.Opacity 
+- Contrôle de la transparence du raster classifié : plugin control Opacity : <https://github.com/dayjournal/Leaflet.Control.Opacity>
 
 - Légende : elle est lue depuis le flux WMS du raster sur le Géoserveur avec la requête GetLegend, qui renvoie une image de la légende qui peut ensuite être intégrée dans un div.
 
