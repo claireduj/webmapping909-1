@@ -7,8 +7,10 @@ Pour ce projet, on affiche les résultats au niveau intermédiaire, c’est-à-d
 feuillus, pins, peupleraie, conifères, mélange de pins et autres conifères.
 
 Les données diffusées via le Geoserveur sont :
- Un fichier raster au format (résultat de la classification), diffusé en WMS
- Un fichier vecteur (échantillons utilisés pour l’entraînement du modèle de classification), diffusé en WFS
+
+- Un fichier raster au format (résultat de la classification), diffusé en WMS
+  
+- Un fichier vecteur (échantillons utilisés pour l’entraînement du modèle de classification), diffusé en WFS
 
 La carte est créée avec la bibliothèque Leaflet intégrée dans une page HTML. Elle se compose de ces éléments :
  Des fonds de cartes issus d’OpenStreetMap (L.TileLayer) et de la Géoplateforme de l’IGN (flux WMTS, L.TileLayer).
